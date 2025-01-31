@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+body {
+  overflow: hidden;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* Ensures that if scrolling is needed, it still works */
+html, body {
+  height: 100%;
+  overflow-y: auto;
+}

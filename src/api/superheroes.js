@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/superheroes";
+const BASE_URL = "http://localhost:4000/superheroes";
 
 export const fetchSuperheroes = async () => {
   try {

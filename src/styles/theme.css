@@ -1,0 +1,110 @@
+/* Light Mode */
+body[data-theme="light"] {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Dark Mode */
+body[data-theme="dark"] {
+    background: linear-gradient(-45deg, #1e1e1e, #252525, #1e1e1e);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite alternate;
+    color: #ffffff;
+}
+
+/* Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Ensure app-container matches dark mode */
+body[data-theme="dark"] .app-container {
+    background-color: transparent; /* ✅ Allow animated background to show */
+    color: #ffffff;
+}
+
+/* Titles & Headings */
+body[data-theme="dark"] h1, 
+body[data-theme="dark"] h2 {
+    color: #ffffff;
+}
+
+/* Form Styling */
+body[data-theme="dark"] .form-container {
+    background-color: #252525;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .form-input {
+    background-color: #333;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+body[data-theme="dark"] .form-input::placeholder {
+    color: #aaaaaa;
+}
+
+/* Form Button */
+body[data-theme="dark"] .form-button {
+    background-color: #007bff;
+    color: white;
+}
+
+body[data-theme="dark"] .form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Slider Label */
+body[data-theme="dark"] .slider-label {
+    color: #f8f8f8;
+}
+
+/* Superhero Cards */
+body[data-theme="dark"] .superhero-card {
+    background-color: #252525;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Superhero Names */
+body[data-theme="dark"] .superhero-name {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Superhero Info */
+body[data-theme="dark"] .superhero-info {
+    color: #bbbbbb;
+}
+
+/* Theme Toggle Button */
+body[data-theme="dark"] .theme-toggle {
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Error Messages */
+body[data-theme="dark"] .error-message {
+    color: #ff6b6b;
+}
+
+/* Superhero-Themed Header */
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+  * {
+    font-family: "Bangers", cursive;
+  }

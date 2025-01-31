@@ -1,0 +1,12 @@
+.superhero-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 30px; /* Space between rows */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .superhero-card-wrapper {
+    padding: 15px; /* ✅ Adds padding between cards in the same row */
+  }

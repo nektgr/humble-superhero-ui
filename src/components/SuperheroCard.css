@@ -1,0 +1,34 @@
+.superhero-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 350px; /* ✅ Ensures a standard width */
+    min-height: 180px; /* ✅ Ensures uniform height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .superhero-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .superhero-card:hover {
+    transform: translateY(-8px) scale(1.05); /* Floating effect */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+  }
+  .superhero-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .superhero-info {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+  }
+  
