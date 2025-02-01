@@ -32,6 +32,12 @@ const SuperheroForm = ({ onAdd }) => {
     setHumilityScore(5);
   };
 
+  const handleSliderChange = (value, event) => {
+    event?.preventDefault(); // ✅ Fix touch scrolling issue
+    event?.stopPropagation();
+    setHumilityScore(value);
+  };
+
   return (
     <div className="form-container">
       <h2 className="form-title">Add a Superhero</h2>
@@ -59,7 +65,7 @@ const SuperheroForm = ({ onAdd }) => {
             max={10}
             step={1}
             value={humilityScore}
-            onChange={(value) => setHumilityScore(value)}
+            onChange={handleSliderChange}
             trackStyle={{ backgroundColor: "#007bff", height: 6 }}
             handleStyle={{
               borderColor: "#007bff",

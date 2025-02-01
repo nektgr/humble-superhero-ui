@@ -13,14 +13,6 @@
     justify-content: center;
   }
   
-  .superhero-card {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .superhero-card:hover {
-    transform: translateY(-8px) scale(1.05); /* Floating effect */
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-  }
   .superhero-name {
     font-size: 1.5rem;
     font-weight: bold;
@@ -31,4 +23,46 @@
     color: #666;
     margin-top: 5px;
   }
-  
+/* Default Hero Image */
+.hero-img {
+  width: 60px; 
+  height: auto;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: filter 1s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Default Superhero Card */
+.superhero-card {
+  position: relative;
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  height: 180px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out; /* Whole card scales */
+}
+
+/* 🔥 Scale the Whole Card on Hover */
+.superhero-card:hover {
+  transform: scale(1.05); /* Scale up the entire card */
+}
+
+/* 🔥 Make the Image Shine for 1 Second on Hover */
+.superhero-card:hover .hero-img {
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8)); /* Golden Glow */
+  animation: shine 1s ease-in-out forwards;
+}
+
+/* 🔥 Shine Animation (Only Lasts for 1 Second) */
+@keyframes shine {
+  0% { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6)); }
+  50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 1)); }
+  100% { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6)); }
+}
