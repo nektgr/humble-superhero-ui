@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
+import PropTypes from "prop-types";
 import { getRandomSuperheroImage } from "../../utils/superheroImages";
 import "./SuperheroCard.css";
 
 const SuperheroCard = ({ superhero }) => {
-  const [heroImage, setHeroImage] = useState(null); // Prevent empty src issues
+  const [heroImage, setHeroImage] = useState(null);
 
   useEffect(() => {
     setHeroImage(getRandomSuperheroImage());
@@ -11,7 +12,6 @@ const SuperheroCard = ({ superhero }) => {
 
   return (
     <div className="superhero-card">
-      {/* ✅ Only render the image when it exists */}
       {heroImage && <img src={heroImage} alt="Superhero" className="hero-img" />}
       <h3 className="superhero-name">{superhero.name}</h3>
       <p><strong>Superpower:</strong> {superhero.superpower}</p>
@@ -20,4 +20,12 @@ const SuperheroCard = ({ superhero }) => {
   );
 };
 
-export default SuperheroCard;
+SuperheroCard.propTypes = {
+  superhero: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    superpower: PropTypes.string.isRequired,
+    humilityScore: PropTypes.number.isRequired,
+  }).isRequired,
+};
+
+export default memo(SuperheroCard);
