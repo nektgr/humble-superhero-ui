@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 export const ThemeContext = createContext();
 
@@ -7,7 +7,7 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme); // Save preference
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -20,3 +20,6 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+// ✅ Ensure this export is correct
+export const useTheme = () => useContext(ThemeContext);

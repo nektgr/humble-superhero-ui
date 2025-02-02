@@ -1,8 +1,9 @@
-import { ThemeProvider } from "./context/ThemeContext";
-import ThemeToggle from "./components/ThemeToggle";
+import { ThemeProvider } from "./components/Theme/ThemeContext";
+import ThemeToggle from "./components/Theme/ThemeToggle"; // ✅ Correct Import
+
 import { useSuperheroes } from "./hooks/useSuperheroes";
-import SuperheroForm from "./components/SuperheroForm";
-import SuperheroList from "./components/SuperheroList";
+import SuperheroList from "./components/Superhero/SuperheroList";
+import SuperheroForm from "./components/Form/SuperheroForm";
 import "./App.css";
 import "./styles/theme.css"; // Ensure theme styles are loaded
 
