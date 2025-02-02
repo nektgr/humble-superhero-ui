@@ -71,7 +71,7 @@ humble-superheroes/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/nektgr/humble-superhero-ui
+   git clone https://github.com/nektgr/humble-superhero-ui.git
    cd humble-superhero-ui
    ```
 2. **Install dependencies:**
