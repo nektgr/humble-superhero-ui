@@ -43,7 +43,6 @@ humble-superheroes/
 │   ├── api
 │   │   └── superheroes.js   # API functions for fetching and adding superheroes.
 │   ├── components
-│   │   ├── ErrorBoundary.jsx # (Optional) Error boundary for better error handling.
 │   │   ├── Form
 │   │   │   └── SuperheroForm.jsx # Form to add superheroes.
 │   │   ├── Superhero
