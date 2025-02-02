@@ -1,8 +1,14 @@
-import { useTheme } from "../Theme/ThemeContext"; // ✅ Correct import
+import { useTheme } from "../Theme/ThemeContext";
 import "./ThemeToggle.css";
 
+/**
+ * Component for toggling between light and dark themes.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered ThemeToggle button.
+ */
 const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme(); // ✅ Use the custom hook
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button className="theme-toggle" onClick={toggleTheme}>

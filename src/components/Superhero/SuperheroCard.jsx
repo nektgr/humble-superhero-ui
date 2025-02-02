@@ -3,6 +3,14 @@ import PropTypes from "prop-types";
 import { getRandomSuperheroImage } from "../../utils/superheroImages";
 import "./SuperheroCard.css";
 
+/**
+ * Component to display individual superhero information.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.superhero - Superhero data object containing name, superpower, and humilityScore.
+ * @returns {JSX.Element} The rendered superhero card.
+ */
 const SuperheroCard = ({ superhero }) => {
   const [heroImage, setHeroImage] = useState(null);
 

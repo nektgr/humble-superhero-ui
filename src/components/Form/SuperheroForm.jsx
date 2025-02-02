@@ -4,6 +4,15 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./SuperheroForm.css";
 
+/**
+ * Component for adding a new superhero.
+ * Renders a form that allows users to input superhero details and submit them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Function} props.onAdd - Callback function to add a new superhero.
+ * @returns {JSX.Element} The rendered SuperheroForm component.
+ */
 const SuperheroForm = ({ onAdd }) => {
   const [name, setName] = useState("");
   const [superpower, setSuperpower] = useState("");
@@ -11,13 +20,23 @@ const SuperheroForm = ({ onAdd }) => {
   const [error, setError] = useState("");
   const nameInputRef = useRef(null);
 
-  // Validate inputs using useCallback for memoization.
+  /**
+   * Validates the form inputs.
+   *
+   * @returns {string} An error message if validation fails; otherwise, an empty string.
+   */
   const validateInput = useCallback(() => {
     if (!name.trim()) return "Name cannot be empty!";
     if (!superpower.trim()) return "Superpower cannot be empty!";
     return "";
   }, [name, superpower]);
 
+  /**
+   * Handles form submission.
+   * Validates input, calls the onAdd callback, plays a sound on success, resets the form, and refocuses the name input.
+   *
+   * @param {React.FormEvent} e - The form submission event.
+   */
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
@@ -48,6 +67,12 @@ const SuperheroForm = ({ onAdd }) => {
     [name, superpower, humilityScore, onAdd, validateInput]
   );
 
+  /**
+   * Handles changes on the slider component.
+   *
+   * @param {number} value - The new slider value.
+   * @param {Event} event - The event triggered by the slider change.
+   */
   const handleSliderChange = useCallback((value, event) => {
     event?.preventDefault();
     event?.stopPropagation();

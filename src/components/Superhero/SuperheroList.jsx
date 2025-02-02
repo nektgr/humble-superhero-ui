@@ -4,6 +4,9 @@ import SuperheroCard from "../Superhero/SuperheroCard";
 import { motion, AnimatePresence } from "framer-motion";
 import "./SuperheroList.css";
 
+/**
+ * Animation variants for superhero cards.
+ */
 const heroVariants = {
   hidden: { opacity: 0, y: -10, scale: 0.9 },
   visible: { 
@@ -15,6 +18,14 @@ const heroVariants = {
   exit: { opacity: 0, scale: 0.9, transition: { duration: 0.3 } },
 };
 
+/**
+ * Component to render a list of superheroes.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object[]} props.superheroes - Array of superhero objects.
+ * @returns {JSX.Element} The rendered list of superhero cards.
+ */
 const SuperheroList = ({ superheroes }) => {
   if (!superheroes.length) return <p>No superheroes yet!</p>;
 
